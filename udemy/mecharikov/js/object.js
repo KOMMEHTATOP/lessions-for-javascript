@@ -32,3 +32,24 @@ user['user-adress'].country = 'Russia';
 
 console.log(value);
 console.log(user);
+
+
+// ДОМАШНЕЕ ЗАДАНИЕ №3 ОБЪЕКТЫ (ОСНОВА)
+
+// 1. Создать объект с полем product, равным ‘iphone’
+// 2. Добавить в объект поле price, равное 1000 и поле currency, равное ‘dollar’
+// 3. Добавить поле details, которое будет содержать объект с полями model и color
+
+const newObject = {
+  product: 'iphone',
+  price: 1000,
+  currency: 'dollar',
+  details: {
+    model: '',
+    color: ''
+  }
+};
+
+console.log(newObject);
+
+

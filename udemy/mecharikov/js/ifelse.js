@@ -227,7 +227,7 @@ let product = {
   price: '20$'
 };
 
-let price = parseFloat(product.price);
+let price = parseFloat(product.price); 
 
 let min = 10; // минимальная цена
 let max = 20; // максимальная цена
@@ -236,4 +236,4 @@ let max = 20; // максимальная цена
     console.log(product.name)
   } else {
     console.log('Товар не найден')
-  }
+  };

@@ -222,18 +222,43 @@
   
 //   Написать условие если цена товара больше или равна минимальной цене и меньше или равна максимальной цене то вывести в консоль название этого товара, иначе вывести в консоль что товаров не найдено.
 
-let product = {
-  name: 'Яблоко',
-  price: '20$'
-};
+// let product = {
+//   name: 'Яблоко',
+//   price: '20$'
+// };
 
-let price = parseFloat(product.price); 
+// let price = parseFloat(product.price); 
 
-let min = 10; // минимальная цена
-let max = 20; // максимальная цена
+// let min = 10; // минимальная цена
+// let max = 20; // максимальная цена
 
-  if (price >= min && price <= max) {
-    console.log(product.name)
-  } else {
-    console.log('Товар не найден')
-  };
+//   if (price >= min && price <= max) {
+//     console.log(product.name)
+//   } else {
+//     console.log('Товар не найден')
+//   };
+
+  // ТЕРНАРНЫЕ ОПЕРАТОРЫ
+  
+  let a = 1;
+  let b = 0;
+  
+  // if (a > 0) {
+  //   b = a;
+  // } else {
+  //   b += 1;
+  // }
+  
+  // синтаксис выглядит так: 
+  // выражение (принимает булиновое значение) ? если true : если false; 
+// let c = a > 0 ? b = a : b += 1;
+//   console.log(`b: ${b}, c: ${c}`);
+  // Еще короче запись
+b = a > 0 ? a : b + 1;
+console.log(`b: ${b}`);
+
+// или можно увеличить условия
+  // выражение ? если true : выражение ? если true : если false;
+
+  c = a > 0 ? 2 : a < 0 ? 3 : 0;
+  console.log(`c: ${c}`)

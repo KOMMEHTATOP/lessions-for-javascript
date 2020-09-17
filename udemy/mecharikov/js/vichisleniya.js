@@ -24,7 +24,6 @@ value = parseFloat(value.toFixed(1)) /*toFixed() Окгругление(числ
 // value = (0.6 * 10 + 0.7 * 10) / 10;
 
 
-
 // ОБЪЕКТ Math - набор свойств и методов для работы с числами.
 value = Math.PI /* ЧИСЛО ПИ */
 value = Math.random() /* РАНДОМНАЯ ЦИФРА ОТ 0 ДО 1 */

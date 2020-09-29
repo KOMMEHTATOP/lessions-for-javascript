@@ -23,11 +23,14 @@ let string = "some test string";
 // Получить первую и последнюю буквы строки
 // Сделать первую и последнюю буквы в верхнем регистре
 
-value = string[0].toUpperCase()
-console.log(value)
-
-value2 = string[string.length -1].toUpperCase()
+value2 = string[0].toUpperCase()
 console.log(value2)
+
+value3 = string[string.length -1].toUpperCase()
+console.log(value3)
+
+firstLast = `${string[0].toUpperCase()}${string.slice(1,-1)}${string[string.length -1].toUpperCase()}`
+console.log(firstLast)
 
 // Найти положение слова ‘string’ в строке
 // Найти положение второго пробела (“вручную” ничего не считать)
@@ -55,6 +58,5 @@ console.log(newStr)
 
 let a = 20
 let b = 16
-
 stringKonkat = a.toString() + b
 console.log(stringKonkat)

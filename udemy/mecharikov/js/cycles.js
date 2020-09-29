@@ -61,7 +61,7 @@ console.log(colors); */
 
 // ПЕРЕБИРАЕМ МАССИВЫ С ОБЪЕКТАМИ
 
-const users = [
+/* const users = [
   {
     name: 'Baha',
     age: 30
@@ -78,7 +78,7 @@ const users = [
     name: 'Gomo',
     age: 10
   }
-];
+]; */
 
 // Доступ ко всем элементам в массиве (например ко всем именам)
 /* for (let i = 0; i < users.length; i++) {
@@ -87,10 +87,32 @@ const users = [
 
 // Создание нового объекта из массива в другом объекте
 // ключи это name, а значения объекты пользователя
-const usersObject = {};
+/* const usersObject = {};
 for (let i = 0; i < users.length; i++) {
-  // console.log(users[i].name);
   usersObject[users[i].name] = users[i]
 }
-console.log(usersObject);
 
+console.log(usersObject);
+ */
+// __________________________________________________
+// FOR IN - нужен для перебора объектов
+/* const users =
+  {
+    name: 'Baha',
+    age: 30
+  }; */
+  // Тут нет итератора. Этот цикл пройдет по всем ключам объекта
+  // называем переменную которую хотим создать, дальше in  и называем объект в котором перебираем. 
+/*   for (let key in users) {
+    В key будет содержаться ключ по каждой операции
+    console.log(key);
+    Чтобы получить значения ключей
+    console.log(users[key]);
+  } */
+
+  // ______________________________________________________
+  // FOR OF 
+/*   for (let value of users) {
+    console.log(value);
+    
+  } */

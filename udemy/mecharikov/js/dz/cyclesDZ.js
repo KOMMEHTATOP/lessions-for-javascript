@@ -27,12 +27,12 @@ age: 29
 
 let str = 'i am in the easycode'
 let strUp = ''
-for (let i = 0; i < str.length; i++) {
+for (i = 0; i < str.length; i++) {
   if (i === 0 || str[i-1] === ' ') {
     strUp += str[i].toUpperCase()
-    console.log(strUp);
   } else {
-    
+    strUp += str[i]
   }
 }
-  // console.log(strUp);
+
+console.log(strUp)

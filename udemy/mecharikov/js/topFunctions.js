@@ -143,3 +143,5 @@ console.log(developerQuestion("Baha"));
 
 const teacherQuestion = question("teacher");
 console.log(teacherQuestion("Baha"));
+
+// SPLIT() - переводит строку в массив. Каждое слово разбивает на отдельный элемент массива. В скобочках указать разделитель.

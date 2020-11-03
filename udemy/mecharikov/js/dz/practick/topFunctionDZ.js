@@ -58,18 +58,59 @@ console.log(firstFunc(["abc", "123"], handler4));
 /* Написать аналог метода every. Создайте функцию every, она должна принимать первым аргументом массив чисел (обязательно проверьте что передан массив) вторым аргументом callback (обязательно проверьте что передана функция)
 функция должна возвращать true или false в зависимости от результата вызова callback (проверить число больше 5). Callback  должен принимать один элемент массива, его индекс в массиве и весь массив. */
 
+/* function every(arr, fn) {
+  if (!Array.isArray(arr)) {
+    return new Error("Первый параметр не массив!");
+  }
+  if (!fn || typeof fn !== "function") {
+    return new Error("Второй параметр не функция!");
+  }
+  return fn(arr);
+}
+
+function helper(arr) {
+  for (let value of arr) {
+    return value >= 5;
+  }
+}
+
+every([5, 6, 5], helper);
+console.log(every([2, 6, 5], helper));
+
+
+ВТОРОЕ РЕШЕНИЕ!!!!!!!!!!!!!
+
+
 function every(arr, fn) {
   if (!Array.isArray(arr)) {
     return new Error("Первый параметр не массив!");
   }
-  if (!fn || typeof fn !== function () {}) {
+  if (!fn || typeof fn !== "function") {
     return new Error("Второй параметр не функция!");
   }
+
+  let arrIndex = [];
+  let arrEl = [];
+
+  for (i = 0; i > arr.length; i++) {
+    arrIndex.push(i);
+    arrEl.push(arr[i]);
+  }
+  return fn(arrEl, arrIndex);
 }
 
-function helper(el) {
-  let bulen = "";
-  return bulen;
+function helper(arrEl, arrIndex) {
+  let res = [];
+  for (let value of arrEl) {
+    if (value < 5) {
+      res.push(true);
+    } else {
+      res.push(false);
+    }
+  }
+  return res;
 }
-every([1, 2, 3, 4], helper);
-console.log(every([1, 2, 3, 4], 2));
+
+every([5, 6, 2], helper);
+console.log(every([6, 6, 5], helper));
+ */

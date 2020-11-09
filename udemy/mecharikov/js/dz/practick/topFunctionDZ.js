@@ -16,7 +16,6 @@ firstFunc([‘abc’, ‘123’], handler4) → “New value: cba, 321,” // с
 /* function firstFunc(arr, fn) {
   let str = "New value: ";
   for (i = 0; i < arr.length; i++) {
-    // console.log(arr[i]);
     str += fn(arr[i]);
   }
   return str;
@@ -51,8 +50,7 @@ function handler4(el) {
   return el.split("").reverse().join("") + ", ";
 }
 
-console.log(firstFunc(["abc", "123"], handler4));
- */
+console.log(firstFunc(["abc", "123"], handler4)); */
 
 //  ---------------------------------------------------------------------------
 /* Написать аналог метода every. Создайте функцию every, она должна принимать первым аргументом массив чисел (обязательно проверьте что передан массив) вторым аргументом callback (обязательно проверьте что передана функция)

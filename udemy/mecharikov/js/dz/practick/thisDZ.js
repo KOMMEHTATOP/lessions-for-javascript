@@ -1,4 +1,4 @@
-// // --------------------------------------------ЗАДАЧА №1------------------------------------------
+//  --------------------------------------------ЗАДАЧА №1------------------------------------------
 /* Создать объект, который описывает ширину и высоту
 прямоугольника, а также может посчитать площадь фигуры:
 const rectangle = {width:..., height:..., getSquare:...};
@@ -109,6 +109,6 @@ const numerator = {
 // console.log(numerator.plusOne());
 // console.log(numerator.minusOne());
 
-numerator.double().plusOne().plusOne().minusOne();
+numerator.double().plusOne().plusOne().minusOne().plusOne();
 numerator.value;
 console.log(numerator.value);

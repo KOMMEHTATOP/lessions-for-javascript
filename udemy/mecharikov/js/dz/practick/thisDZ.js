@@ -110,22 +110,39 @@ numerator.double().plusOne().plusOne().minusOne().plusOne();
 numerator.value;
 console.log(numerator.value); */
 
-
 // --------------------------------------------ЗАДАЧА №5------------------------------------------
 /* Создать объект с розничной ценой и количеством продуктов.
 Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов)
  */
 
- const basket = {
-   pomidor: 10,
-   ogurec: 11,
-   banan: 12,
-   quantity: 5,
-   allPrice:  function() {
-    for (let index = 0; index < this.length; index++) {
-      const element = this[index];
-      console.log(element)
+/* const basket = {
+  pomidor: {
+    price: 10,
+    quantity: 5,
+  },
+  ogurec: {
+    price: 11,
+    quantity: 3,
+  },
+  cheez: {
+    price: 10,
+    quantity: 5,
+  },
+  metodThis: function () {
+    let res = 0;
+    for (const key in this) {
+      const el = this[key];
+      // console.log(el);
+      if (key !== "metodThis") {
+        let vid = el.price * el.quantity;
+        res += vid;
+      }
     }
-  }
- }
- console.log(basket.allPrice())
+    console.log(res);
+  },
+};
+
+basket.metodThis(); */
+
+// --------------------------------------------ЗАДАЧА №6------------------------------------------
+/*  */

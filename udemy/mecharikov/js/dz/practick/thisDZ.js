@@ -114,8 +114,8 @@ console.log(numerator.value); */
 /* Создать объект с розничной ценой и количеством продуктов.
 Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов)
  */
-
-/* const basket = {
+/* 
+const basket = {
   pomidor: {
     price: 10,
     quantity: 5,
@@ -129,20 +129,109 @@ console.log(numerator.value); */
     quantity: 5,
   },
   metodThis: function () {
-    let res = 0;
+    let res = [];
+    let summa = 0
     for (const key in this) {
-      const el = this[key];
-      // console.log(el);
+      let el = this[key];
       if (key !== "metodThis") {
         let vid = el.price * el.quantity;
-        res += vid;
+        res.push(vid);
+        summa += vid
       }
     }
-    console.log(res);
+    console.log(summa);
   },
 };
-
+""
 basket.metodThis(); */
 
+
+// Номральное решение задачи 1
+/* const prod2 = {
+  price: 5,
+  quantity: 15,
+  cost() {
+    return this.price * this.quantity
+  }
+}
+console.log(prod2.cost()) */
+
 // --------------------------------------------ЗАДАЧА №6------------------------------------------
-/*  */
+/* Создать объект из предыдущей задачи. Создать второй объект, который описывает количество деталей и цену за одну деталь. Для второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы.
+
+Для этого “позаимствуйте” метод из предыдущего объекта. */
+/* const basket = {
+  pomidor: {
+    price: 10,
+    quantity: 5,
+  },
+  ogurec: {
+    price: 11,
+    quantity: 3,
+  },
+  cheez: {
+    price: 14,
+    quantity: 5,
+  },
+  metodThis: function () {
+    let res = [];
+    let summa = 0
+    for (const key in this) {
+      let el = this[key];
+      if (key !== "metodThis") {
+        let vid = el.price * el.quantity;
+        res.push(vid);
+        summa += vid
+      }
+    }
+    return `У вас в корзине ${res.length} товара по ${res} руб., общей стоимостью: ${summa}`;
+  },
+  
+};
+
+basket.metodThis();
+console.log(basket.metodThis()) */
+
+
+// Нормальное решение задачи 2
+/* const prod3 = {
+  price: 5,
+  quantity: 15,
+  cost() {
+    return this.price * this.quantity
+  }
+}
+
+const prod4 = {
+  price: 10,
+  quantity: 7
+}
+prod4.cost = prod3.cost
+
+console.log(prod4.cost()) */
+
+// --------------------------------------------ЗАДАЧА №7------------------------------------------
+/* Даны объект и функция:
+Не изменяя функцию или объект, получить результат функции getSquare для объекта sizes */
+
+/* let sizes = {width: 5, height: 10},
+getSquare = function () {return this.width * this.height};
+console.log(getSquare.call(sizes)) */
+
+
+// --------------------------------------------ЗАДАЧА №8------------------------------------------
+/* let element = {
+height: 25,
+getHeight: function () {return this.height;}
+};
+let getElementHeight = element.getHeight;
+getElementHeight(); // undefined
+
+Измените функцию getElementHeight таким образом, чтобы можно было вызвать getElementHeight() и получить 25. */
+
+ let element = {
+  height: 25,
+  getHeight: function () {return this.height;}
+  };
+  let getElementHeight = element.getHeight;
+  getElementHeight(); 

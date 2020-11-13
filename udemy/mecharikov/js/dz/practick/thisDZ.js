@@ -1,80 +1,65 @@
-//  --------------------------------------------ЗАДАЧА №1------------------------------------------
-/* Создать объект, который описывает ширину и высоту
+
+// -------------------------------------------Задание № 1-----------------------------------------
+/* Вопросы к этому заданию
+Создать объект, который описывает ширину и высоту
 прямоугольника, а также может посчитать площадь фигуры:
 const rectangle = {width:..., height:..., getSquare:...};
  */
+/* const rectangle = {
+  width:80,
+  height:50,
+  getSquare(){
+    return this.width * this.height
+  }
+}
+console.log(rectangle.getSquare()) */
 
-/* const rectangleObj = {
-  widthObj: 80,
-  heightObj: 30,
-  getSquare,
-};
+// -------------------------------------------Задание № 2----------------------------------------
 
-console.log(rectangleObj.getSquare());
 
-function getSquare() {
-  return this.widthObj * this.heightObj;
-} */
-
-// --------------------------------------------ЗАДАЧА №2------------------------------------------
-/* Создать объект, у которого будет цена товара и его скидка, а также
+ /* Создать объект, у которого будет цена товара и его скидка, а также
 два метода: для получения цены и для расчета цены с учетом скидки:
+
 const price = {
 price: 10,
 discount: '15%',
 ... };
 price.getPrice(); // 10
-price.getPriceWithDiscount(); // 8.5
- */
+price.getPriceWithDiscount(); // 8.5 */
 
-/* const priceObj = {
-  price: 100,
-  discount: "15%",
-  getPrice,
-  getPriceWithDiscount,
+/* const price = {
+  price: 10,
+  discount: '15%',
+  getPrice() {
+    return this.price
+  },
+  getPriceWithDiscount() {
+    return this.price - this.price * (parseInt(this.discount) / 100)
+  }
 };
+price.getPrice();
+price.getPriceWithDiscount();  */
 
-function getPrice() {
-  return this.price;
-}
-function getPriceWithDiscount() {
-  return this.price - this.price * (parseInt(this.discount) / 100);
-}
-
-console.log(priceObj.getPrice());
-console.log(priceObj.getPriceWithDiscount());
-
-const anyObj = {
-  price: 200,
-  discount: "23%",
-  //   getPrice,
-  //   getPriceWithDiscount,
-};
-
-console.log(getPrice.call(anyObj, "*")); /* Метод call - первым аргументом указываем контектс вызова, дальше дополнительный аргумент.*/
-// console.log(getPriceWithDiscount.apply(anyObj)); /* Тоже самое но работает с массивами, хз почему нет ошибки */
-// console.log(getPriceWithDiscount.bind(anyObj, "*")); /* Вызывает  */ */
-
-// --------------------------------------------ЗАДАЧА №3------------------------------------------
+//  -------------------------------------------Задание № 3-----------------------------------------
 
 /* Создать объект, у которого будет поле высота и метод “увеличить
 высоту на один”. Метод должен возвращать новую высоту:
+
 object.height = 10;
 object.inc(); // придумать свое название для метода
 object.height; // 11; */
-
-/* const obj = {
-  heightObj: 10,
-  incrHeigth,
-};
-function incrHeigth() {
-  return (this.heightObj += 1);
+/* 
+let heightObj = {
+  height: 10,
+  incriment() {
+    return ++this.height
+  },
 }
-console.log(obj);
-obj.incrHeigth();
-console.log(obj); */
+console.log(heightObj.incriment()) */
 
-// --------------------------------------------ЗАДАЧА №4------------------------------------------
+
+// -------------------------------------------Задание № 4-----------------------------------------
+
 /* Создать объект “вычислитель”, у которого есть числовое свойство
 “значение” и методы “удвоить”, “прибавить один”, “отнять один”.
 Методы можно вызывать через точку, образуя цепочку методов:
@@ -87,140 +72,74 @@ minusOne: function () {...},
 }
 
 numerator.double().plusOne().plusOne().minusOne();
-numerator.value // 3 */
+numerator.value // 3
+ */
 
 /* const numerator = {
   value: 1,
   double: function () {
     this.value *= 2;
-    return this;
+    return this
   },
   plusOne: function () {
     this.value++;
-    return this;
+    return this
   },
   minusOne: function () {
     this.value--;
-    return this;
+    return this
   },
-};
+  }
+  numerator.double().plusOne().plusOne().minusOne();
+  numerator.value // 3 */
 
+// -------------------------------------------Задание № 5-----------------------------------------
 
-numerator.double().plusOne().plusOne().minusOne().plusOne();
-numerator.value;
-console.log(numerator.value); */
-
-// --------------------------------------------ЗАДАЧА №5------------------------------------------
 /* Создать объект с розничной ценой и количеством продуктов.
-Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов)
- */
-/* 
-const basket = {
-  pomidor: {
-    price: 10,
-    quantity: 5,
-  },
-  ogurec: {
-    price: 11,
-    quantity: 3,
-  },
-  cheez: {
-    price: 10,
-    quantity: 5,
-  },
-  metodThis: function () {
-    let res = [];
-    let summa = 0
-    for (const key in this) {
-      let el = this[key];
-      if (key !== "metodThis") {
-        let vid = el.price * el.quantity;
-        res.push(vid);
-        summa += vid
-      }
-    }
-    console.log(summa);
-  },
-};
-""
-basket.metodThis(); */
+Этот объект должен содержать метод для получения общей стоимости всех товаров (цена * количество продуктов) */
 
-
-// Номральное решение задачи 1
-/* const prod2 = {
-  price: 5,
-  quantity: 15,
-  cost() {
-    return this.price * this.quantity
-  }
-}
-console.log(prod2.cost()) */
-
-// --------------------------------------------ЗАДАЧА №6------------------------------------------
-/* Создать объект из предыдущей задачи. Создать второй объект, который описывает количество деталей и цену за одну деталь. Для второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы.
-
-Для этого “позаимствуйте” метод из предыдущего объекта. */
-/* const basket = {
-  pomidor: {
-    price: 10,
-    quantity: 5,
-  },
-  ogurec: {
-    price: 11,
-    quantity: 3,
-  },
-  cheez: {
-    price: 14,
-    quantity: 5,
-  },
-  metodThis: function () {
-    let res = [];
-    let summa = 0
-    for (const key in this) {
-      let el = this[key];
-      if (key !== "metodThis") {
-        let vid = el.price * el.quantity;
-        res.push(vid);
-        summa += vid
-      }
-    }
-    return `У вас в корзине ${res.length} товара по ${res} руб., общей стоимостью: ${summa}`;
-  },
-  
-};
-
-basket.metodThis();
-console.log(basket.metodThis()) */
-
-
-// Нормальное решение задачи 2
-/* const prod3 = {
-  price: 5,
-  quantity: 15,
-  cost() {
-    return this.price * this.quantity
-  }
-}
-
-const prod4 = {
+/* const backet = {
   price: 10,
-  quantity: 7
+  quantity: 2,
+  getSquare() {
+    return this.price * this.quantity
+  }
 }
-prod4.cost = prod3.cost
+console.log(backet.getSquare()) */
 
-console.log(prod4.cost()) */
+// -------------------------------------------Задание № 6-----------------------------------------
 
-// --------------------------------------------ЗАДАЧА №7------------------------------------------
+/* Создать объект из предыдущей задачи. Создать второй объект, который описывает количество деталей и цену за одну деталь. Для второго объекта нужно узнать общую стоимость всех деталей, но нельзя создавать новые функции и методы.
+Для этого “позаимствуйте” метод из предыдущего объекта. */
+
+/* const backet = {
+  price: 10,
+  quantity: 2,
+  getSquare() {
+    return this.price * this.quantity
+  }
+}
+backet.getSquare()
+
+const anotherProd = {
+  price: 20,
+  counts: 10,
+}
+backet.getSquare.call(anotherProd) */
+
+// -------------------------------------------Задание № 7-----------------------------------------
+
 /* Даны объект и функция:
+let sizes = {width: 5, height: 10},
+getSquare = function () {return this.width * this.height};
 Не изменяя функцию или объект, получить результат функции getSquare для объекта sizes */
-
 /* let sizes = {width: 5, height: 10},
 getSquare = function () {return this.width * this.height};
-console.log(getSquare.call(sizes)) */
+getSquare.call(sizes) */
 
+// -------------------------------------------Задание № 8-----------------------------------------
 
-// --------------------------------------------ЗАДАЧА №8------------------------------------------
-/* let element = {
+/*let element = {
 height: 25,
 getHeight: function () {return this.height;}
 };
@@ -234,5 +153,7 @@ getElementHeight(); // undefined
   getHeight: function () {return this.height;}
   };
   let getElementHeight = element.getHeight.bind(element);
-  getElementHeight(); 
-  console.log(getElementHeight()) */
+  
+  getElementHeight(); */
+
+  
